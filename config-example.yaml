@@ -1,0 +1,28 @@
+target:
+  # Main URL of the kind of appointment, used to get session cookies for requests
+  start_url: https://cqm.cleverq.de/public/sites/131/appointments/index.html?lang=de
+  # Appointment endpoint. Get this endpoint using the network developer tools of your browser
+  # The example is the endpoint to search for two appointments to apply for passport or ID documents
+  # Add start_date and end_date as parameters, they will be set by the application
+  appointment_url: https://cqm.cleverq.de/api/external/v2/sites/131/appointments/available_days?service_id=617&from_day={start_date}&to_day={end_date}&subtask_items[]=%7B%22subtask_id%22:373,%22number%22:1%7D
+  # Latest date that you want to be notified about. This should be one day earlier than the appointment you are currently able to book.
+  latest_data: 2021-08-19
+
+interval: 
+  # Number of minutes between requests during the day
+  day: 15
+  # Number of minutes between requests during the night
+  night: 60
+  # Differentiate between night and day. If false, day value will be used.
+  night_enabled: true
+  # Hour that the night starts at
+  night_start: 20
+  # Hour that the night ends at
+  night_end: 07
+
+telegram:
+  # Token of your telegram bot
+  token: secret
+  # Id of your chat with your bot
+  chat_id: secret
+
